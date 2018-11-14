@@ -51,3 +51,24 @@ function doSomething(callback){
 }
 
 doSomething(console.log)
+
+//this
+
+const person = {
+    name: "Ronnie",
+    greet: function() { console.log("hello" + this.name)},
+}
+
+person.greet()
+
+const friend = {
+    name: "David",
+}
+
+friend.greet = person.greet
+
+friend.greet()
+
+const greet = person.greet
+
+greet()
